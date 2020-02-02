@@ -1,0 +1,8 @@
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Entities\bin\Debug\netcoreapp3.0\AccountOwner.Entities.deps.json
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Entities\bin\Debug\netcoreapp3.0\AccountOwner.Entities.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Entities\bin\Debug\netcoreapp3.0\AccountOwner.Entities.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Entities\obj\Debug\netcoreapp3.0\AccountOwner.Entities.AssemblyInfoInputs.cache
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Entities\obj\Debug\netcoreapp3.0\AccountOwner.Entities.AssemblyInfo.cs
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Entities\obj\Debug\netcoreapp3.0\AccountOwner.Entities.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Entities\obj\Debug\netcoreapp3.0\AccountOwner.Entities.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Entities\obj\Debug\netcoreapp3.0\AccountOwner.Entities.csprojAssemblyReference.cache

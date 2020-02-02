@@ -1,0 +1,13 @@
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\bin\Debug\netcoreapp3.0\AccountOwner.LoggerService.deps.json
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\bin\Debug\netcoreapp3.0\AccountOwner.LoggerService.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\bin\Debug\netcoreapp3.0\AccountOwner.LoggerService.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\bin\Debug\netcoreapp3.0\AccountOwner.Contracts.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\bin\Debug\netcoreapp3.0\AccountOwner.Entities.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\bin\Debug\netcoreapp3.0\AccountOwner.Contracts.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\bin\Debug\netcoreapp3.0\AccountOwner.Entities.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\obj\Debug\netcoreapp3.0\AccountOwner.LoggerService.csprojAssemblyReference.cache
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\obj\Debug\netcoreapp3.0\AccountOwner.LoggerService.AssemblyInfoInputs.cache
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\obj\Debug\netcoreapp3.0\AccountOwner.LoggerService.AssemblyInfo.cs
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\obj\Debug\netcoreapp3.0\AccountOwner.LoggerService.csproj.CopyComplete
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\obj\Debug\netcoreapp3.0\AccountOwner.LoggerService.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\LoggerService\obj\Debug\netcoreapp3.0\AccountOwner.LoggerService.pdb

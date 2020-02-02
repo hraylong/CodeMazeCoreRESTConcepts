@@ -1,0 +1,11 @@
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\bin\Debug\netcoreapp3.0\AccountOwner.Contracts.deps.json
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\bin\Debug\netcoreapp3.0\AccountOwner.Contracts.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\bin\Debug\netcoreapp3.0\AccountOwner.Contracts.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\bin\Debug\netcoreapp3.0\AccountOwner.Entities.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\bin\Debug\netcoreapp3.0\AccountOwner.Entities.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\obj\Debug\netcoreapp3.0\AccountOwner.Contracts.csprojAssemblyReference.cache
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\obj\Debug\netcoreapp3.0\AccountOwner.Contracts.AssemblyInfoInputs.cache
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\obj\Debug\netcoreapp3.0\AccountOwner.Contracts.AssemblyInfo.cs
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\obj\Debug\netcoreapp3.0\AccountOwner.Contracts.csproj.CopyComplete
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\obj\Debug\netcoreapp3.0\AccountOwner.Contracts.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\obj\Debug\netcoreapp3.0\AccountOwner.Contracts.pdb
