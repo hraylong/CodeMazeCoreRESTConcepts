@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -50,7 +49,7 @@ namespace AccountOwner.ApiServer
 			services.AddControllers(config =>
 			{
 				config.RespectBrowserAcceptHeader = true;
-				config.ReturnHttpNotAcceptable = true;
+				config.ReturnHttpNotAcceptable = false;
 			}).AddXmlDataContractSerializerFormatters()
 			.AddNewtonsoftJson();
 

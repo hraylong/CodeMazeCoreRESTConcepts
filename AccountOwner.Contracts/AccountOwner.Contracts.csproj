@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Entities\AccountOwner.Entities.csproj" />
+    <ProjectReference Include="..\AccountOwner.Entities\AccountOwner.Entities.csproj" />
   </ItemGroup>
 
 </Project>

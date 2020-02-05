@@ -9,3 +9,14 @@ C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts
 C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\obj\Debug\netcoreapp3.1\AccountOwner.Contracts.csproj.CopyComplete
 C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\obj\Debug\netcoreapp3.1\AccountOwner.Contracts.dll
 C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts-hateoas-start\Contracts\obj\Debug\netcoreapp3.1\AccountOwner.Contracts.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\bin\Debug\netcoreapp3.1\AccountOwner.Contracts.deps.json
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\bin\Debug\netcoreapp3.1\AccountOwner.Contracts.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\bin\Debug\netcoreapp3.1\AccountOwner.Contracts.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\bin\Debug\netcoreapp3.1\AccountOwner.Entities.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\bin\Debug\netcoreapp3.1\AccountOwner.Entities.pdb
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\obj\Debug\netcoreapp3.1\AccountOwner.Contracts.csprojAssemblyReference.cache
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\obj\Debug\netcoreapp3.1\AccountOwner.Contracts.AssemblyInfoInputs.cache
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\obj\Debug\netcoreapp3.1\AccountOwner.Contracts.AssemblyInfo.cs
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\obj\Debug\netcoreapp3.1\AccountOwner.Contracts.csproj.CopyComplete
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\obj\Debug\netcoreapp3.1\AccountOwner.Contracts.dll
+C:\Users\ray\Documents\GitRepos\CodeMazeCoreRESTConcepts\AccountOwner.Contracts\obj\Debug\netcoreapp3.1\AccountOwner.Contracts.pdb

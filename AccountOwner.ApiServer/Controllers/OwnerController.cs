@@ -1,9 +1,7 @@
 ﻿using AccountOwner.ApiServer.Filters;
 using AccountOwner.Contracts;
-using AccountOwner.Entities.Models;
-using AccountOwner.Extensions;
-//using AccountOwner.Helpers;
 using AccountOwner.Models;
+using AccountOwner.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Net.Http.Headers;
@@ -11,6 +9,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AccountOwner.Entities.Models;
 
 namespace AccountOwner.ApiServer.Controllers
 {
@@ -65,20 +64,6 @@ namespace AccountOwner.ApiServer.Controllers
                 return Ok(shapedOwners);
             }
 
-            //foreach (var owner in shapedOwners)
-            //{
-            //    var someValue = owner.Values.ToList();
-            //    var someKey = owner.Keys.ToList();
-            //    var ownerProperties = new Dictionary<string, object>();
-            //    for (int index = 0; index < someKey.Count; index++)
-            //    {
-            //        ownerProperties.Add(someKey[index], someValue[index]);
-            //    }
-            //    var ownerId = (Guid)ownerProperties.GetValueOrDefault("Id");
-            //    var ownerLinks = CreateLinksForOwner(ownerId, ownerParameters.Fields);
-            //    owner.Add("Links", ownerLinks);
-            //}
-
             for (var index = 0; index < owners.Count(); index++)
             {
                 var ownerLinks = CreateLinksForOwner(owners[index].Id, ownerParameters.Fields);
@@ -91,6 +76,7 @@ namespace AccountOwner.ApiServer.Controllers
         }
 
         [HttpGet("{id}", Name = "OwnerById")]
+        [ServiceFilter(typeof(ValidateMediaTypeAttribute))]
         public IActionResult GetOwnerById(Guid id, [FromQuery] string fields)
         {
             var owner = _repository.Owner.GetOwnerById(id, fields);
@@ -101,7 +87,15 @@ namespace AccountOwner.ApiServer.Controllers
                 return NotFound();
             }
 
-            owner.Entity.Add("Links", CreateLinksForOwner(id, fields));
+            var mediaType = (MediaTypeHeaderValue)HttpContext.Items["AcceptHeaderMediaType"];
+
+            if (!mediaType.SubTypeWithoutSuffix.EndsWith("hateoas", StringComparison.InvariantCultureIgnoreCase))
+            {
+                _logger.LogInfo($"Returned shaped owner with id: {id}");
+                return Ok(owner.Entity);
+            }
+
+            owner.Entity.Add("Links", CreateLinksForOwner(owner.Id, fields));
 
             return Ok(owner);
         }

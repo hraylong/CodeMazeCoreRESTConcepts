@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LoggerService\AccountOwner.LoggerService.csproj" />
-    <ProjectReference Include="..\Repository\AccountOwner.Repository.csproj" />
+    <ProjectReference Include="..\AccountOwner.LoggerService\AccountOwner.LoggerService.csproj" />
+    <ProjectReference Include="..\AccountOwner.Repository\AccountOwner.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>
