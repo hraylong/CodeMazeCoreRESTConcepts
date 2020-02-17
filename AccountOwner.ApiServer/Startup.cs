@@ -50,7 +50,8 @@ namespace AccountOwner.ApiServer
 			{
 				config.RespectBrowserAcceptHeader = true;
 				config.ReturnHttpNotAcceptable = false;
-			}).AddXmlDataContractSerializerFormatters()
+			})
+			.AddXmlDataContractSerializerFormatters()
 			.AddNewtonsoftJson();
 
 			services.AddCustomMediaTypes();
@@ -92,9 +93,7 @@ namespace AccountOwner.ApiServer
 				});
 			});
 
-			app.UseHttpsRedirection();
-
-			app.UseCors("CorsPolicy");
+			app.UseHttpsRedirection();			
 
 			app.UseForwardedHeaders(new ForwardedHeadersOptions
 			{
@@ -104,6 +103,8 @@ namespace AccountOwner.ApiServer
 			app.UseStaticFiles();
 
 			app.UseRouting();
+
+			app.UseCors("CorsPolicy");
 
 			app.UseEndpoints(endpoints =>
 			{

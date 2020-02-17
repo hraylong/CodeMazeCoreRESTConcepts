@@ -48,12 +48,12 @@ namespace AccountOwner.Repository
 			owners = owners.Where(o => o.Name.ToLowerInvariant().Contains(ownerName.Trim().ToLowerInvariant()));
 		}
 
-		public ShapedEntity GetOwnerById(Guid ownerId, string fields)
+		public ShapedEntity GetOwnerById(Guid ownerId, OwnerParameters ownerParameters)
 		{
 			var owner = FindByCondition(owner => owner.Id.Equals(ownerId))
 				.FirstOrDefault();
 
-			return _dataShaper.ShapeData(owner, fields);
+			return _dataShaper.ShapeData(owner, ownerParameters.Fields);
 		}
 
 		public Owner GetOwnerById(Guid ownerId)

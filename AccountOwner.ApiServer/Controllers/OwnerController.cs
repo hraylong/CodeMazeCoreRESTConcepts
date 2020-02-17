@@ -61,6 +61,7 @@ namespace AccountOwner.ApiServer.Controllers
 
             if (!mediaType.SubTypeWithoutSuffix.EndsWith("hateoas", StringComparison.InvariantCultureIgnoreCase))
             {
+                _logger.LogInfo($"Returned shaped owners.");
                 return Ok(shapedOwners);
             }
 
@@ -77,11 +78,13 @@ namespace AccountOwner.ApiServer.Controllers
 
         [HttpGet("{id}", Name = "OwnerById")]
         [ServiceFilter(typeof(ValidateMediaTypeAttribute))]
-        public IActionResult GetOwnerById(Guid id, [FromQuery] string fields)
+        public IActionResult GetOwnerById(Guid id, [FromQuery] OwnerParameters ownerParameters)
         {
-            var owner = _repository.Owner.GetOwnerById(id, fields);
+            var owner = _repository.Owner.GetOwnerById(id, ownerParameters);
 
-            if (owner.Id == Guid.Empty)
+            var shapedOwner = owner.Entity;
+
+            if (id == Guid.Empty)
             {
                 _logger.LogError($"Owner with id: {id}, hasn't been found in db.");
                 return NotFound();
@@ -92,12 +95,13 @@ namespace AccountOwner.ApiServer.Controllers
             if (!mediaType.SubTypeWithoutSuffix.EndsWith("hateoas", StringComparison.InvariantCultureIgnoreCase))
             {
                 _logger.LogInfo($"Returned shaped owner with id: {id}");
-                return Ok(owner.Entity);
+                return Ok(shapedOwner);
             }
 
-            owner.Entity.Add("Links", CreateLinksForOwner(owner.Id, fields));
+            var ownerLinks = CreateLinksForOwner(owner.Id, ownerParameters.Fields);
+            shapedOwner.Add("Links", ownerLinks);
 
-            return Ok(owner);
+            return Ok(shapedOwner);
         }
 
         [HttpPost]

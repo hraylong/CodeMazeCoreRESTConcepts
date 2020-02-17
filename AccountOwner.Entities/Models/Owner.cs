@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using AccountOwner.Helpers;
+using Newtonsoft.Json;
 
 namespace AccountOwner.Models
 {

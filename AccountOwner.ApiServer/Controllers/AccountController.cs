@@ -1,8 +1,10 @@
-﻿using AccountOwner.Contracts;
+﻿using AccountOwner.ApiServer.Filters;
+using AccountOwner.Contracts;
 using AccountOwner.Entities.Models;
 using AccountOwner.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -28,9 +30,10 @@ namespace AccountOwner.ApiServer.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult GetAccountsForOwner(Guid ownerId, [FromQuery] AccountParameters parameters)
+		[ServiceFilter(typeof(ValidateMediaTypeAttribute))]
+		public IActionResult GetAccountsForOwner(Guid ownerId, [FromQuery] AccountParameters accountParameters)
 		{
-			var accounts = _repository.Account.GetAccountsByOwner(ownerId, parameters);
+			var accounts = _repository.Account.GetAccountsByOwner(ownerId, accountParameters);
 
 			var metadata = new
 			{
@@ -48,23 +51,16 @@ namespace AccountOwner.ApiServer.Controllers
 
 			var shapedAccounts = accounts.Select(o => o.Entity).ToList();
 
-			//foreach (var account in shapedAccounts)
-			//{
-			//	var someValue = account.Values.ToList();
-			//	var someKey = account.Keys.ToList();
-			//	var accountProperties = new Dictionary<string, object>();
-			//	for (int index = 0; index < someKey.Count; index++)
-			//	{
-			//		account.Add(someKey[index], someValue[index]);
-			//	}
-			//	var accountId = (Guid)accountProperties.GetValueOrDefault("Id");
-			//	var accountLinks = CreateLinksForAccount(ownerId, accountId, parameters.Fields);
-			//	account.Add("Links", accountLinks);
-			//}
+			var mediaType = (MediaTypeHeaderValue)HttpContext.Items["AcceptHeaderMediaType"];
+
+			if (!mediaType.SubTypeWithoutSuffix.EndsWith("hateoas", StringComparison.InvariantCultureIgnoreCase))
+			{
+				return Ok(shapedAccounts);
+			}
 
 			for (var index = 0; index < accounts.Count(); index++)
 			{
-				var accountLinks = CreateLinksForAccount(ownerId, accounts[index].Id, parameters.Fields);
+				var accountLinks = CreateLinksForAccount(ownerId, accounts[index].Id, accountParameters.Fields);
 				shapedAccounts[index].Add("Links", accountLinks);
 			}
 
@@ -74,9 +70,12 @@ namespace AccountOwner.ApiServer.Controllers
 		}
 
 		[HttpGet("{id}")]
-		public IActionResult GetAccountForOwner(Guid ownerId, Guid id, [FromQuery] string fields)
+		[ServiceFilter(typeof(ValidateMediaTypeAttribute))]
+		public IActionResult GetAccountForOwner(Guid ownerId, Guid id, [FromQuery] AccountParameters accountParameters)
 		{
-			var account = _repository.Account.GetAccountByOwner(ownerId, id, fields);
+			var account = _repository.Account.GetAccountByOwner(ownerId, id, accountParameters.Fields);
+
+			var shappedAccount = account.Entity;
 
 			if (account.Id == Guid.Empty)
 			{
@@ -84,9 +83,19 @@ namespace AccountOwner.ApiServer.Controllers
 				return NotFound();
 			}
 
-			account.Entity.Add("Links", CreateLinksForAccount(ownerId, id, fields));
+			var mediaType = (MediaTypeHeaderValue)HttpContext.Items["AcceptHeaderMediaType"];
 
-			return Ok(account);
+			if (!mediaType.SubTypeWithoutSuffix.EndsWith("hateoas", StringComparison.InvariantCultureIgnoreCase))
+			{
+				_logger.LogInfo($"Returned shaped account with id: {id}");
+				return Ok(shappedAccount);
+			}
+
+
+			var accountLinks = CreateLinksForAccount(ownerId, account.Id, accountParameters.Fields);
+			shappedAccount.Add("Links", accountLinks);
+
+			return Ok(shappedAccount);
 		}
 
 		private List<Link> CreateLinksForAccount(Guid ownerId, Guid id, string fields = "")

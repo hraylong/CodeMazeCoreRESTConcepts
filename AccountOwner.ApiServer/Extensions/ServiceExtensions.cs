@@ -21,7 +21,7 @@ namespace AccountOwner.ApiServer.Extensions
 			services.AddCors(options =>
 			{
 				options.AddPolicy("CorsPolicy",
-					builder => builder.WithOrigins("http://localhost:5000", "https://localhost:5001")
+					builder => builder.WithOrigins("http://localhost:5000", "http://localhost:8080")
 					.AllowAnyMethod()
 					.AllowAnyHeader()
 					.AllowCredentials());

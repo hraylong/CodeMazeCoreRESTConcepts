@@ -75,7 +75,12 @@ namespace AccountOwner.Helpers
 			foreach (var property in requiredProperties)
 			{
 				var objectPropertyValue = property.GetValue(entity);
-				shapedObject.Entity.TryAdd(property.Name, objectPropertyValue);
+				//var propertyNameOut = property.Name;
+				//var propertyJsonNameOutFirstChar = propertyNameOut.Substring(0, 1).ToLower();
+				//var propertyJsonNameOutEndCharacters = propertyNameOut.Substring(1);
+				//var propertyJsonNameOut = property.Name.Substring(0, 1).ToLower() + property.Name.Substring(1);
+				shapedObject.Entity.TryAdd(property.Name.Substring(0, 1).ToLower() + property.Name.Substring(1), objectPropertyValue);
+				var propertyNameOut = property.Name;
 			}
 
 			var objectProperty = entity.GetType().GetProperty("Id");
