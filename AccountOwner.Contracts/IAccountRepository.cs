@@ -1,6 +1,7 @@
 ﻿using AccountOwner.Helpers;
 using AccountOwner.Models;
 using System;
+using System.Collections.Generic;
 
 namespace AccountOwner.Contracts
 {
@@ -9,5 +10,6 @@ namespace AccountOwner.Contracts
 		PagedList<ShapedEntity> GetAccountsByOwner(Guid ownerId, AccountParameters parameters);
 		ShapedEntity GetAccountByOwner(Guid ownerId, Guid id, string fields);
 		Account GetAccountByOwner(Guid ownerId, Guid id);
+		IEnumerable<Account> AccountsByOwner(Guid ownerId);
 	}
 }

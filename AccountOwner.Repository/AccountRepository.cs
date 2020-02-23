@@ -3,6 +3,7 @@ using AccountOwner.Entities;
 using AccountOwner.Helpers;
 using AccountOwner.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AccountOwner.Repository
@@ -41,6 +42,11 @@ namespace AccountOwner.Repository
 		public Account GetAccountByOwner(Guid ownerId, Guid id)
 		{
 			return FindByCondition(a => a.OwnerId.Equals(ownerId) && a.Id.Equals(id)).SingleOrDefault();
+		}
+
+		public IEnumerable<Account> AccountsByOwner(Guid ownerId)
+		{
+			return FindByCondition(a => a.OwnerId.Equals(ownerId)).ToList();
 		}
 	}
 }
